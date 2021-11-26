@@ -50,7 +50,7 @@ func addCommonCmdOptions(f *flag.FlagSet) {
 }
 
 func createHelmClient() helm.Interface {
-	options := []helm.Option{helm.Host(os.Getenv("TILLER_HOST")), helm.ConnectTimeout(int64(30))}
+	options := []helm.Option{helm.Host(os.Getenv("TILLER_HOST")), helm.ConnectTimeout(int64(120))}
 
 	if settings.TLSVerify || settings.TLSEnable {
 		tlsopts := tlsutil.Options{
